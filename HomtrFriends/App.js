@@ -24,15 +24,19 @@ import {
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
 
+import { Container, Content, Footer, FooterTab, Button, Icon } from 'native-base';
+
 const App: () => React$Node = () => {
   return (
     <>
       <StatusBar barStyle="dark-content" />
-      <SafeAreaView>
+        
+        <Header />
+        <Content>
         <ScrollView
           contentInsetAdjustmentBehavior="automatic"
           style={styles.scrollView}>
-          <Header />
+          
           {global.HermesInternal == null ? null : (
             <View style={styles.engine}>
               <Text style={styles.footer}>Engine: Hermes</Text>
@@ -67,7 +71,30 @@ const App: () => React$Node = () => {
             <LearnMoreLinks />
           </View>
         </ScrollView>
-      </SafeAreaView>
+        </Content>
+
+        <Footer>
+          <FooterTab>
+            <Button vertical>
+              <Icon name="apps" />
+              <Text>Apps</Text>
+            </Button>
+            <Button vertical>
+              <Icon name="camera" />
+              <Text>Camera</Text>
+            </Button>
+            <Button vertical active>
+              <Icon active name="navigate" />
+              <Text>Navigate</Text>
+            </Button>
+            <Button vertical>
+              <Icon name="person" />
+              <Text>Contact</Text>
+            </Button>
+          </FooterTab>
+        </Footer>
+
+      
     </>
   );
 };
