@@ -28,6 +28,8 @@ import {
   Container, Content, Footer, FooterTab, Button, Icon,
   Header, Left, Body, Right, Title, Card, CardItem } from 'native-base';
 
+import Rank from './components/home/SectionList';
+
 const App: () => React$Node = () => {
   return (
     <>
@@ -65,6 +67,8 @@ const App: () => React$Node = () => {
                 2020-07-20 16:00 업데이트
               </Text>
             </View>
+
+            {/* <Rank></Rank> */}
 
             <View style={styles.sectionContainer}>
             <ImageBackground source={require('./images/home_today_1st.png')} style={styles.image}>
