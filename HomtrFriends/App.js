@@ -18,17 +18,12 @@ import {
 } from 'react-native';
 
 import {
-  LearnMoreLinks,
   Colors,
-  DebugInstructions,
-  ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
 
 import {
   Container, Content, Footer, FooterTab, Button, Icon,
   Header, Left, Body, Right, Title, Card, CardItem } from 'native-base';
-
-import Rank from './components/home/SectionList';
 
 const App: () => React$Node = () => {
   return (
@@ -70,22 +65,43 @@ const App: () => React$Node = () => {
             </View>
 
             {/* 홈트프렌즈 순위 */}
-            <ScrollView horizontal>
-              <View style={styles.sectionContainer}>
+            <ScrollView horizontal style={styles.sectionContainer}>
+              <View style={styles.sectionScrollView}>
                 <ImageBackground source={require('./images/home_today_1st.png')} style={styles.image}>
                   <Text style={styles.text}>Inside</Text>
                 </ImageBackground>
               </View>
-              <View style={styles.sectionContainer}>
+              <View style={styles.sectionScrollView}>
                 <ImageBackground source={require('./images/home_today_1st.png')} style={styles.image}>
                   <Text style={styles.text}>Inside</Text>
                 </ImageBackground>
               </View>
-              <View style={styles.sectionContainer}>
+              <View style={styles.sectionScrollView}>
                 <ImageBackground source={require('./images/home_today_1st.png')} style={styles.image}>
                   <Text style={styles.text}>Inside</Text>
                 </ImageBackground>
               </View>
+              <View style={styles.sectionScrollView}>
+                <ImageBackground source={require('./images/home_today_1st.png')} style={styles.image}>
+                  <Text style={styles.text}>Inside</Text>
+                </ImageBackground>
+              </View>
+              <View style={styles.sectionScrollView}>
+                <ImageBackground source={require('./images/home_today_1st.png')} style={styles.image}>
+                  <Text style={styles.text}>Inside</Text>
+                </ImageBackground>
+              </View>
+              <View style={styles.sectionScrollView}>
+                <ImageBackground source={require('./images/home_today_1st.png')} style={styles.image}>
+                  <Text style={styles.text}>Inside</Text>
+                </ImageBackground>
+              </View>
+              <View style={styles.sectionScrollView}>
+                <ImageBackground source={require('./images/home_today_1st.png')} style={styles.image}>
+                  <Text style={styles.text}>Inside</Text>
+                </ImageBackground>
+              </View>
+              
             </ScrollView>
 
             {/* 이런 운동 어때요? 타이틀 */}
@@ -98,8 +114,8 @@ const App: () => React$Node = () => {
             </View>
 
             {/* 이런 운동 어때요? 카드 스크롤뷰 */}
-            <ScrollView horizontal>
-              <View style={styles.sectionContainer}>
+            <ScrollView horizontal style={styles.sectionContainer}>
+              <View style={styles.sectionScrollView}>
                 <Card>
                   <CardItem header button onPress={() => alert("This is Card Header")}>
                     <Text>NativeBase</Text>
@@ -117,7 +133,7 @@ const App: () => React$Node = () => {
                 </Card>
               </View>
 
-              <View style={styles.sectionContainer}>
+              <View style={styles.sectionScrollView}>
                 <Card>
                   <CardItem header button onPress={() => alert("This is Card Header")}>
                     <Text>NativeBase</Text>
@@ -135,7 +151,7 @@ const App: () => React$Node = () => {
                 </Card>
               </View>
 
-              <View style={styles.sectionContainer}>
+              <View style={styles.sectionScrollView}>
                 <Card>
                   <CardItem header button onPress={() => alert("This is Card Header")}>
                     <Text>NativeBase</Text>
@@ -152,23 +168,45 @@ const App: () => React$Node = () => {
                   </CardItem>
                 </Card>
               </View>
+
+              <View style={styles.sectionScrollView}>
+                <Card>
+                  <CardItem header button onPress={() => alert("This is Card Header")}>
+                    <Text>NativeBase</Text>
+                  </CardItem>
+                  <CardItem button onPress={() => alert("This is Card Body")}>
+                    <Body>
+                      <Text>
+                        Click on any carditem
+                      </Text>
+                    </Body>
+                  </CardItem>
+                  <CardItem footer button onPress={() => alert("This is Card Footer")}>
+                    <Text>GeekyAnts</Text>
+                  </CardItem>
+                </Card>
+              </View>
+
+              <View style={styles.sectionScrollView}>
+                <Card>
+                  <CardItem header button onPress={() => alert("This is Card Header")}>
+                    <Text>NativeBase</Text>
+                  </CardItem>
+                  <CardItem button onPress={() => alert("This is Card Body")}>
+                    <Body>
+                      <Text>
+                        Click on any carditem
+                      </Text>
+                    </Body>
+                  </CardItem>
+                  <CardItem footer button onPress={() => alert("This is Card Footer")}>
+                    <Text>GeekyAnts</Text>
+                  </CardItem>
+                </Card>
+              </View>
+
             </ScrollView>
-          
 
-            {/* 최초 코드 */}
-            <View style={styles.sectionContainer}>
-              <Text style={styles.sectionTitle}>Debug</Text>
-              <Text style={styles.sectionDescription}>
-                <DebugInstructions />
-              </Text>
-            </View>
-            <View style={styles.sectionContainer}>
-              <Text style={styles.sectionTitle}>Learn More</Text>
-              <Text style={styles.sectionDescription}>
-                Read the docs to discover what to do next:
-              </Text>
-            </View>
-            <LearnMoreLinks />
           </View>
         </ScrollView>
         </Content>
@@ -213,6 +251,10 @@ const styles = StyleSheet.create({
   sectionContainer: {
     marginTop: 32,
     paddingHorizontal: 24,
+  },
+  sectionScrollView: {
+    paddingRight: 16,
+    marginBottom: 24,
   },
   sectionTitle: {
     fontSize: 24,
