@@ -60,6 +60,7 @@ const App: () => React$Node = () => {
             </View>
           )}
           <View style={styles.body}>
+            {/* 오늘의 홈트프렌즈 타이틀 */}
             <View style={styles.sectionContainer}>
               <Text style={styles.sectionTitle}>
                 오늘의 <Text style={styles.highlight}> 홈트프렌즈</Text></Text>
@@ -68,39 +69,93 @@ const App: () => React$Node = () => {
               </Text>
             </View>
 
-            {/* <Rank></Rank> */}
+            {/* 홈트프렌즈 순위 */}
+            <ScrollView horizontal>
+              <View style={styles.sectionContainer}>
+                <ImageBackground source={require('./images/home_today_1st.png')} style={styles.image}>
+                  <Text style={styles.text}>Inside</Text>
+                </ImageBackground>
+              </View>
+              <View style={styles.sectionContainer}>
+                <ImageBackground source={require('./images/home_today_1st.png')} style={styles.image}>
+                  <Text style={styles.text}>Inside</Text>
+                </ImageBackground>
+              </View>
+              <View style={styles.sectionContainer}>
+                <ImageBackground source={require('./images/home_today_1st.png')} style={styles.image}>
+                  <Text style={styles.text}>Inside</Text>
+                </ImageBackground>
+              </View>
+            </ScrollView>
 
+            {/* 이런 운동 어때요? 타이틀 */}
             <View style={styles.sectionContainer}>
-            <ImageBackground source={require('./images/home_today_1st.png')} style={styles.image}>
-              <Text style={styles.text}>Inside</Text>
-            </ImageBackground>
-
-
-
-            {/* <Card style={{flex: 0}}>
-            <CardItem>
-                <Body >
-                  <Text >현재 1위</Text>
-                </Body>
-              </CardItem>
-              <CardItem>
-                <Body>
-                  <Image source='home_today_1st.png' style={{height: 200, width: 200, flex: 1}}/>
-                  <Text> Park88 </Text>
-                  <Text note>1030점</Text>
-                </Body>
-              </CardItem>
-              <CardItem>
-                <Left>
-                  <Button transparent textStyle={{color: '#87838B'}}>
-                    <Icon name="logo-github" />
-                    <Text>1,926 stars</Text>
-                  </Button>
-                </Left>
-              </CardItem>
-          </Card> */}
+              <Text style={styles.sectionTitle}>
+                이런 운동<Text style={styles.highlight}> 어때요?</Text></Text>
+              <Text style={styles.sectionDescription}>
+                수잔 님을 위한 오늘의 추천 운동
+              </Text>
             </View>
 
+            {/* 이런 운동 어때요? 카드 스크롤뷰 */}
+            <ScrollView horizontal>
+              <View style={styles.sectionContainer}>
+                <Card>
+                  <CardItem header button onPress={() => alert("This is Card Header")}>
+                    <Text>NativeBase</Text>
+                  </CardItem>
+                  <CardItem button onPress={() => alert("This is Card Body")}>
+                    <Body>
+                      <Text>
+                        Click on any carditem
+                      </Text>
+                    </Body>
+                  </CardItem>
+                  <CardItem footer button onPress={() => alert("This is Card Footer")}>
+                    <Text>GeekyAnts</Text>
+                  </CardItem>
+                </Card>
+              </View>
+
+              <View style={styles.sectionContainer}>
+                <Card>
+                  <CardItem header button onPress={() => alert("This is Card Header")}>
+                    <Text>NativeBase</Text>
+                  </CardItem>
+                  <CardItem button onPress={() => alert("This is Card Body")}>
+                    <Body>
+                      <Text>
+                        Click on any carditem
+                      </Text>
+                    </Body>
+                  </CardItem>
+                  <CardItem footer button onPress={() => alert("This is Card Footer")}>
+                    <Text>GeekyAnts</Text>
+                  </CardItem>
+                </Card>
+              </View>
+
+              <View style={styles.sectionContainer}>
+                <Card>
+                  <CardItem header button onPress={() => alert("This is Card Header")}>
+                    <Text>NativeBase</Text>
+                  </CardItem>
+                  <CardItem button onPress={() => alert("This is Card Body")}>
+                    <Body>
+                      <Text>
+                        Click on any carditem
+                      </Text>
+                    </Body>
+                  </CardItem>
+                  <CardItem footer button onPress={() => alert("This is Card Footer")}>
+                    <Text>GeekyAnts</Text>
+                  </CardItem>
+                </Card>
+              </View>
+            </ScrollView>
+          
+
+            {/* 최초 코드 */}
             <View style={styles.sectionContainer}>
               <Text style={styles.sectionTitle}>Debug</Text>
               <Text style={styles.sectionDescription}>
