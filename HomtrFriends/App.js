@@ -14,24 +14,39 @@ import {
   View,
   Text,
   StatusBar,
+  ImageBackground,
 } from 'react-native';
 
 import {
-  Header,
   LearnMoreLinks,
   Colors,
   DebugInstructions,
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
 
-import { Container, Content, Footer, FooterTab, Button, Icon } from 'native-base';
+import {
+  Container, Content, Footer, FooterTab, Button, Icon,
+  Header, Left, Body, Right, Title, Card, CardItem } from 'native-base';
 
 const App: () => React$Node = () => {
   return (
     <>
       <StatusBar barStyle="dark-content" />
         
-        <Header />
+        <Header >
+          <Left>
+            <Button transparent>
+              {/* <Icon name='menu'/> */}
+              <Text>메뉴</Text>
+            </Button>
+          </Left>
+          <Right>
+            <Button transparent>
+              {/* <Icon name='menu' /> */}
+              <Text>프로필사진</Text>
+            </Button>
+          </Right>
+        </Header>
         <Content>
         <ScrollView
           contentInsetAdjustmentBehavior="automatic"
@@ -44,18 +59,44 @@ const App: () => React$Node = () => {
           )}
           <View style={styles.body}>
             <View style={styles.sectionContainer}>
-              <Text style={styles.sectionTitle}>Step One</Text>
+              <Text style={styles.sectionTitle}>
+                오늘의 <Text style={styles.highlight}> 홈트프렌즈</Text></Text>
               <Text style={styles.sectionDescription}>
-                Edit <Text style={styles.highlight}>App.js</Text> to change this
-                screen and then come back to see your edits.
+                2020-07-20 16:00 업데이트
               </Text>
             </View>
+
             <View style={styles.sectionContainer}>
-              <Text style={styles.sectionTitle}>See Your Changes</Text>
-              <Text style={styles.sectionDescription}>
-                <ReloadInstructions />
-              </Text>
+            <ImageBackground source={require('./images/home_today_1st.png')} style={styles.image}>
+              <Text style={styles.text}>Inside</Text>
+            </ImageBackground>
+
+
+
+            {/* <Card style={{flex: 0}}>
+            <CardItem>
+                <Body >
+                  <Text >현재 1위</Text>
+                </Body>
+              </CardItem>
+              <CardItem>
+                <Body>
+                  <Image source='home_today_1st.png' style={{height: 200, width: 200, flex: 1}}/>
+                  <Text> Park88 </Text>
+                  <Text note>1030점</Text>
+                </Body>
+              </CardItem>
+              <CardItem>
+                <Left>
+                  <Button transparent textStyle={{color: '#87838B'}}>
+                    <Icon name="logo-github" />
+                    <Text>1,926 stars</Text>
+                  </Button>
+                </Left>
+              </CardItem>
+          </Card> */}
             </View>
+
             <View style={styles.sectionContainer}>
               <Text style={styles.sectionTitle}>Debug</Text>
               <Text style={styles.sectionDescription}>
@@ -77,19 +118,19 @@ const App: () => React$Node = () => {
           <FooterTab>
             <Button vertical>
               <Icon name="apps" />
-              <Text>Apps</Text>
+              <Text>홈</Text>
             </Button>
             <Button vertical>
               <Icon name="camera" />
-              <Text>Camera</Text>
+              <Text>운동하기</Text>
             </Button>
             <Button vertical active>
               <Icon active name="navigate" />
-              <Text>Navigate</Text>
+              <Text>홈트프렌즈</Text>
             </Button>
             <Button vertical>
               <Icon name="person" />
-              <Text>Contact</Text>
+              <Text>운동보고서</Text>
             </Button>
           </FooterTab>
         </Footer>
@@ -135,6 +176,13 @@ const styles = StyleSheet.create({
     padding: 4,
     paddingRight: 12,
     textAlign: 'right',
+  },
+
+  image: {
+    width: 143.333,
+    height: 239.333,
+    resizeMode: "cover",
+    justifyContent: "center"
   },
 });
 
